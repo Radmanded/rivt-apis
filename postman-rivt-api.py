@@ -39,6 +39,7 @@ response = requests.request("POST", url, headers=headers, data=payload)
 my_response = json.loads(payload,  )
 
 
+print(f'partnerNameBeGeoName: {my_response["entity"][0]["partnerName"]}, certifications: {my_response["entity"][0]["certification"]}')
 
 # ToDo: Print out Every partnerNameBeGeoName,certification returned in the object
 
@@ -46,13 +47,17 @@ my_response = json.loads(payload,  )
 # 24/7 NETWORKS LLC,REGISTERED
 # 24/7 NETWORKS LLC,PREMIER
 
+Current Output:
+partnerNameBeGeoName: 24/7 NETWORKS LLC, certifications:
+
 # Parse data for specific key;value pair
 
-h=[] # store our media which is a list of dictionaries
-for news_stuff in pop articles:
-if 'source' in news stuff:
-my_data['source' ].append(new_stuff[' source'])
-if 'published date' in news stuff:
-my_data['published_date' ].append (new_stuff|'published date'])
-if adx keywords' in news stuff:
-my_data['adx_keywords'].append(new_stuff['adx_keywords'])
+# partner_list = []
+# # Start the iteration cycle
+# for partner in my_response["entity"]:
+#     # "item" is each individual dictionary, so do an if check to see if the "price" key is 2.25
+#     if partner["partnerNameBeGeoName"] == 'True':
+#         # If so, append it to the list called item_list
+#         partner_list.append(partner["id"])
+# # print the item_list to console
+# print(partner_list)
