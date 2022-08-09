@@ -1,0 +1,25 @@
+{
+    "service": "getRessellerData",
+    "ccoId": "rubend@synnex.com",
+    "profileId": "975",
+    "entity": [
+        {
+            "sourceName": "COMSTOR",
+            "resellerAccNo": "",
+            "soldToName": "",
+            "partnerName": "24/7 NETWORKS LLC",
+            "city": "",
+            "state": "",
+            "postalCode": "",
+            "country": "USA",
+            "specialization": "",
+            "certification": "",
+            "authorization": "",
+            "theaterCode": "USA",
+            "partnerType": "",
+            "partnerSiteid": "",
+            "pageNumber": 1,
+            "pageSize": 50
+        }
+    ]
+}
