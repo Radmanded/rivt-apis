@@ -36,10 +36,23 @@ headers = {
 
 response = requests.request("POST", url, headers=headers, data=payload)
 
-my_response = json.loads(payload)
+my_response = json.loads(payload,  )
+
+
 
 # ToDo: Print out Every partnerNameBeGeoName,certification returned in the object
 
-Output:
-24/7 NETWORKS LLC,REGISTERED
-24/7 NETWORKS LLC,PREMIER
+# Output:
+# 24/7 NETWORKS LLC,REGISTERED
+# 24/7 NETWORKS LLC,PREMIER
+
+# Parse data for specific key;value pair
+
+h=[] # store our media which is a list of dictionaries
+for news_stuff in pop articles:
+if 'source' in news stuff:
+my_data['source' ].append(new_stuff[' source'])
+if 'published date' in news stuff:
+my_data['published_date' ].append (new_stuff|'published date'])
+if adx keywords' in news stuff:
+my_data['adx_keywords'].append(new_stuff['adx_keywords'])
