@@ -31,15 +31,14 @@ payload = json.dumps({
 headers = {
   'Content-Type': 'application/json',
   'Authorization': 'Basic ZGlzdGlfc2VydmljZXMuZ2VuOkQhc3RyaWJ1dDFu',
-  'Cookie': 'a79f8307c5db34ee3f6ffd933dd657a9=bbafdea3f4a8e5b5450320700f656451; d9c4bd7d7cdfdd17f7f220ce2c1d6546=3bd8e4cf58f23dd67066f9e5cd4cb59a'
 }
 
 response = requests.request("POST", url, headers=headers, data=payload)
 
 my_response = json.loads(payload,  )
 
-
-print(f'partnerNameBeGeoName: {my_response["entity"][0]["partnerName"]}, certifications: {my_response["entity"][0]["certification"]}')
+print(my_response)
+print(f'partnerNameBeGeoName: {my_response["entity"][0]["partnerName"]}, country: {my_response["entity"][0]["country"]}')
 
 # ToDo: Print out Every partnerNameBeGeoName,certification returned in the object
 
@@ -47,8 +46,8 @@ print(f'partnerNameBeGeoName: {my_response["entity"][0]["partnerName"]}, certifi
 # 24/7 NETWORKS LLC,REGISTERED
 # 24/7 NETWORKS LLC,PREMIER
 
-Current Output:
-partnerNameBeGeoName: 24/7 NETWORKS LLC, certifications:
+# Current Output:
+# partnerNameBeGeoName: 24/7 NETWORKS LLC, certifications:
 
 # Parse data for specific key;value pair
 
