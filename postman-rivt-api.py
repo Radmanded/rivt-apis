@@ -38,7 +38,7 @@ response = requests.request("POST", url, headers=headers, data=payload)
 my_response = json.loads(payload,  )
 
 print(my_response)
-print(f'partnerNameBeGeoName: {my_response["entity"][0]["partnerName"]}, country: {my_response["entity"][0]["country"]}')
+#print(f'partnerNameBeGeoName: {my_response["entity"][0]["partnerName"]}, country: {my_response["entity"][0]["country"]}')
 
 # ToDo: Print out Every partnerNameBeGeoName,certification returned in the object
 
@@ -51,12 +51,3 @@ print(f'partnerNameBeGeoName: {my_response["entity"][0]["partnerName"]}, country
 
 # Parse data for specific key;value pair
 
-# partner_list = []
-# # Start the iteration cycle
-# for partner in my_response["entity"]:
-#     # "item" is each individual dictionary, so do an if check to see if the "price" key is 2.25
-#     if partner["partnerNameBeGeoName"] == 'True':
-#         # If so, append it to the list called item_list
-#         partner_list.append(partner["id"])
-# # print the item_list to console
-# print(partner_list)

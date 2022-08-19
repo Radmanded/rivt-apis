@@ -1,5 +1,6 @@
 import json
 
+
 json_data = '''{
 	"errorFlag": "N",
 	"statusCode": "SUCCESS",
@@ -8,7 +9,7 @@ json_data = '''{
 		[{
 				"distiValRid": "639254",
 				"distiValSoldTo": "24/7 NETWORKS, INC.",
-				"partnerNameBeGeoName": "24/7 NETWORKS LLC",
+				"partnerNameBeGeoName": company_name,
 				"partnerName": "24/7 NETWORKS LLC",
 				"address1": "116 INVERNESS DR E",
 				"address2": "STE 200 ",
@@ -60,31 +61,54 @@ json_data = '''{
 }
 '''
 
+#loads the json data into a python dictionary
 data = json.loads(json_data)
+
+# input company name to search for in the json data and returns the company data if found else returns None if not found
+def search_company(company_name):
+	for company in data['entity']:
+		for partner in company[0]:
+			if partner['partnerNameBeGeoName'] == company_name:
+				return partner
+
+
+
+#prints the company data if found else prints None if not found
+def print_company(company_name):
+    company = search_company(company_name)
+    if company is None:
+        print('Company not found')
+    else:
+        print(company)
+
+def main():
+
+#input company name to search for in the json data and prints the company data if found else prints None if not found
+    company_name = input('Enter company name: ')
+    print_company(company_name)
+
+if __name__ == '__main__':
+    main()
+
+
+
+
+# Return companies certification results for a given company name and certification type (e.g. PREMIER) and returns the company data if found else returns None if not found
+
+'''
+# query the dictionary for the company name
+for item in data['items']
 
 print(data['entity'][0][0]['partnerNameBeGeoName'], data['entity'][0][0]['certification'] )
 print(data['entity'][0][0]['partnerNameBeGeoName'], data['entity'][0][0]['specialization'] )
 
-#print(f' Partner: { data["entity"][0][0]["partnerNameBeGeoName"], data["entity"][0][0]["certification"]}')
+
 
 for i in data['entity']:
     for j in i:
         print(j['partnerNameBeGeoName'], j['certification'])
         print(j['partnerNameBeGeoName'], j['specialization'])
 
-
-# Perform a basic iteration through the toppings, printing out each ID and type in a formatted manner
-
-# You have to set the iteration on a list, since
-#for entity in data["entity"]:
-   #print(f'ID: { data["entity"][0][0]["partnerNameBeGeoName"], data["entity"][0][0]["certification"]}')
-
-
-
-
-# ['partnerNameBeGeoName']
-
-#print(data(fcc_data, indent=4, sort_keys=True))
-#print(f' {data["entity"][0]["partnerNameBeGeoName"]}, {data["entity"][0]["certification"]}')
+'''
 
 
